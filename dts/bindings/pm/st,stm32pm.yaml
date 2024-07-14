@@ -1,0 +1,14 @@
+# Copyright (c) 2023, Farit N
+# SPDX-License-Identifier: Apache-2.0
+
+description: Power Management for SMT32
+
+compatible: "st,stm32pm"
+
+include: base.yaml
+
+properties:
+    wakeup-gpios:
+        type: phandle-array
+        description: The array of the Wakeup GPIOs
+        required: false

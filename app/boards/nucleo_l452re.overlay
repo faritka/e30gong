@@ -1,0 +1,50 @@
+/*
+ * Copyright (c) 2024 Farit N
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/* This devicetree overlay file will be automatically picked by the Zephyr
+ * build system when building the sample for the nucleo_l452re board. It shows
+ * how the example-application can be built on sample boards already provided
+ * by Zephyr.
+ */
+
+/ {
+    chosen {
+        zephyr,console = &usart1;
+        zephyr,shell-uart = &usart1;
+        zephyr,sram = &sram0;
+        zephyr,flash = &flash0;
+        zephyr,can-primary = &can1;
+    };
+
+};
+
+&usart1 {
+    pinctrl-0 = <&usart1_tx_pa9 &usart1_rx_pa10>;
+    pinctrl-names = "default";
+    current-speed = <115200>;
+    status = "okay";
+};
+
+&usart2 {
+    status = "disabled";
+};
+
+/ {
+    stm32dac {
+        compatible = "st,stm32dac";
+        enable-gpios = <&gpioa 3 0>;
+    };
+};
+
+/ {
+    stm32pm {
+        compatible = "st,stm32pm";
+        wakeup-gpios = <&gpioa 0 0>, 
+            <&gpioc 13 0>, 
+            <&gpioa 2 0>, 
+            <&gpioc 5 0>; 
+    };
+};
+

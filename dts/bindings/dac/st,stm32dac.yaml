@@ -1,0 +1,15 @@
+# Copyright (c) 2023, Farit N
+# SPDX-License-Identifier: Apache-2.0
+
+description: DAC for SMT32
+
+compatible: "st,stm32dac"
+
+include: base.yaml
+
+properties:
+    enable-gpios:
+        type: phandle-array
+        description: The GPIO that enables the audio amplifier
+        required: false
+

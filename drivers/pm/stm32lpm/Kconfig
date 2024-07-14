@@ -1,0 +1,12 @@
+# Copyright (c) 2022
+# SPDX-License-Identifier: Apache-2.0
+
+config STM32LPM
+	bool "The Standby power mode for STM32L452RE"
+	depends on SOC_FAMILY_STM32
+	select USE_STM32_LL_PWR
+	select USE_STM32_LL_RCC
+	select USE_STM32_LL_EXTI
+    select USE_STM32_LL_GPIO
+	help
+	  Switch the STM32L452 to the Standby power mode
