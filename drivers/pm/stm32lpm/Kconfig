@@ -8,5 +8,6 @@ config STM32LPM
 	select USE_STM32_LL_RCC
 	select USE_STM32_LL_EXTI
     select USE_STM32_LL_GPIO
+    default true
 	help
 	  Switch the STM32L452 to the Standby power mode

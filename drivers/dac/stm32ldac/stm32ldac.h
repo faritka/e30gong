@@ -10,8 +10,6 @@
 
 #include <string.h>
 
-#include <zephyr/kernel.h>
-
 #include "stm32_ll_bus.h"
 #include "stm32_ll_rcc.h"
 #include "stm32_ll_system.h"
